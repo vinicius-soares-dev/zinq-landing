@@ -8,7 +8,6 @@ import { ReactLenis } from 'lenis/react';
 
 import { Header } from '@/components/Header'; 
 import { Footer } from '@/components/Footer'; 
-import { ConversionBanner } from '@/components/ConversionBanner'; 
 import { Hand } from 'lucide-react';
 
 import { 
@@ -440,7 +439,6 @@ export default function KanbanClient() {
         </main>
       </ReactLenis>
       <Footer />
-      <ConversionBanner variant='floating' />
     </div>
   );
 }

@@ -5,7 +5,6 @@ import {
 } from 'lucide-react';
 
 import { Footer } from '@/components/Footer';
-import { ConversionBanner } from '@/components/ConversionBanner';
 import { Header } from '@/components/Header';
 
 // 🎯 SEO NATIVO DO NEXT.JS (Substitui o React Helmet)
@@ -302,7 +301,6 @@ export default function AIFeaturePage() {
       </main>
       
       <Footer />
-      <ConversionBanner variant="floating" />
     </div>
   );
 }

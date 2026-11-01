@@ -8,7 +8,6 @@ import { ReactLenis } from 'lenis/react';
 
 import { Header } from '@/components/Header'; 
 import { Footer } from '@/components/Footer'; 
-import { ConversionBanner } from '@/components/ConversionBanner'; 
 
 import { 
   ArrowRight, Shuffle, Users, Zap, Target, 
@@ -396,7 +395,6 @@ export default function RoletasClient() {
         </main>
       </ReactLenis>
       <Footer />
-      <ConversionBanner variant='floating' />
     </div>
   );
 }

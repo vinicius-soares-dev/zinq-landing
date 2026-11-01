@@ -14,7 +14,6 @@ import {
 } from 'lucide-react';
 
 import { Footer } from '@/components/Footer';
-import { ConversionBanner } from '@/components/ConversionBanner';
 import { FeaturesHorizontalScroll } from '@/components/FeaturesHorizontalScroll';
 import { StackedCardsSection } from '@/components/StackedCardsSection';
 import { ShieldAndAISection } from '@/components/ShieldAndAISection';
@@ -116,31 +115,56 @@ const Hero = () => {
 };
 
 const SocialProof = () => {
-  // 🎯 Correção: Adicionado ': Variants'
-  const containerVariants: Variants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.1 } } };
-  const itemVariants: Variants = { hidden: { opacity: 0, y: 20, filter: "blur(8px)" }, visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { type: "spring", stiffness: 60, damping: 15 } } };
+  const containerVariants: Variants = { 
+    hidden: { opacity: 0 }, 
+    visible: { opacity: 1, transition: { staggerChildren: 0.05, delayChildren: 0.05 } } 
+  };
+  const itemVariants: Variants = { 
+    hidden: { opacity: 0, y: 20, filter: "blur(8px)" }, 
+    visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { type: "spring", stiffness: 80, damping: 15 } } 
+  };
 
   return (
     <section className="relative py-20 bg-white overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-32 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-50 via-white to-white opacity-80 pointer-events-none"></div>
+      
       <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
-        <motion.p initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, ease: "easeOut" }} className="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-[0.25em] mb-12">
+        <motion.p 
+          initial={{ opacity: 0, y: 15 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "50px" }} 
+          transition={{ duration: 0.5, ease: "easeOut" }} 
+          className="text-xs md:text-sm font-bold text-slate-400 uppercase tracking-[0.25em] mb-12"
+        >
           A ESCOLHA DE OPERAÇÕES E NEGÓCIOS DE ALTO DESEMPENHO
         </motion.p>
-        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} className="flex flex-wrap justify-center items-center gap-x-6 gap-y-6 md:gap-x-10 md:gap-y-8">
+        
+        <motion.div 
+          variants={containerVariants} 
+          initial="hidden" 
+          whileInView="visible" 
+          viewport={{ once: true, margin: "50px" }} 
+          className="flex flex-wrap justify-center items-center gap-x-6 gap-y-6 md:gap-x-10 md:gap-y-8"
+        >
           {[
-              { icon: Building2, label: 'Imobiliárias' },
-              { icon: HeartPulse, label: 'Clínicas' },
-              { icon: Headset, label: 'Equipes de Vendas' },
-              { icon: Sparkles, label: 'Centros de Estética' },
-              { icon: Briefcase, label: 'Escritórios B2B' }
+              { icon: Building2, label: 'Imobiliárias', href: '/imobiliarias' },
+              { icon: HeartPulse, label: 'Clínicas', href: '/clinicas' },
+              { icon: Headset, label: 'Equipes de Vendas', href: '/vendas' },
+              { icon: Sparkles, label: 'Centros de Estética', href: '/estetica' },
+              { icon: Briefcase, label: 'Escritórios B2B', href: '/b2b' }
           ].map((item) => (
-            <motion.div key={item.label} variants={itemVariants} whileHover={{ y: -3, scale: 1.02 }} className="flex items-center gap-3 group cursor-default bg-white px-5 py-3 rounded-2xl border border-slate-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_-10px_rgba(37,99,235,0.15)] hover:border-blue-100 transition-all duration-300">
-              <div className="p-2 bg-slate-50 rounded-xl group-hover:bg-blue-50 transition-colors duration-300">
-                  <item.icon size={20} className="text-slate-400 group-hover:text-blue-600 transition-colors duration-300" />
-              </div>
-              <span className="text-base md:text-lg font-bold text-slate-500 group-hover:text-slate-900 transition-colors duration-300">{item.label}</span>
-            </motion.div>
+            <Link key={item.label} href={item.href} className="outline-none">
+              <motion.div 
+                variants={itemVariants} 
+                whileHover={{ y: -3, scale: 1.02 }} 
+                className="flex items-center gap-3 group cursor-pointer bg-white px-5 py-3 rounded-2xl border border-slate-100 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_-10px_rgba(37,99,235,0.15)] hover:border-blue-100 transition-all duration-300 transform-gpu"
+              >
+                <div className="p-2 bg-slate-50 rounded-xl group-hover:bg-blue-50 transition-colors duration-300">
+                    <item.icon size={20} className="text-slate-400 group-hover:text-blue-600 transition-colors duration-300" />
+                </div>
+                <span className="text-base md:text-lg font-bold text-slate-500 group-hover:text-slate-900 transition-colors duration-300">{item.label}</span>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>
@@ -295,7 +319,6 @@ export default function HomePage() {
       </ReactLenis>
 
       <Footer />
-      <ConversionBanner variant='floating' />
 
       <script
         type="application/ld+json"
