@@ -498,7 +498,7 @@ const FinalCTA = () => (
       </p>
       <div className="flex flex-col items-center gap-8">
         <Link
-          href="/register"
+          href="https://zinqme.com/register"
           className="group relative inline-flex items-center justify-center gap-3 px-12 py-6 bg-white text-blue-700 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-[0_20px_60px_-15px_rgba(255,255,255,0.3)] shadow-2xl overflow-hidden ring-4 ring-white/10"
         >
           <span className="relative z-10">Começar Teste Grátis de 7 Dias</span>

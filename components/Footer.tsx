@@ -159,7 +159,7 @@ export const Footer = () => {
                 Engineered with precision by
               </span>
               <a
-                href="https://viniciussoares.vgtech.solutions"
+                href="https://viniciussoaresdev.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold text-slate-200 hover:text-white transition-colors"
@@ -172,7 +172,7 @@ export const Footer = () => {
 
             <div className="flex items-center gap-3">
               <a
-                href="https://viniciussoares.vgtech.solutions"
+                href="https://viniciussoaresdev.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-blue-400 transition-colors"
